@@ -43,7 +43,7 @@ async function grabTextFromPage() {
             // 4. Ждем появления сегментов текста (цикл до 5 секунд)
             for (let i = 0; i < 20; i++) {
                 await sleep(250);
-                segments = document.querySelectorAll('ytd-transcript-segment-renderer .segment-text');
+                segments = document.querySelectorAll('transcript-segment-view-model .yt-core-attributed-string');
                 if (segments.length > 0) break;
             }
         }
@@ -64,4 +64,5 @@ async function grabTextFromPage() {
     }
 
     return false;
+
 }
