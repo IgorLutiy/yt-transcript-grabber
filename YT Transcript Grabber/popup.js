@@ -43,7 +43,7 @@ async function grabTextFromPage() {
             // 4. Ждем появления сегментов текста (цикл до 5 секунд)
             for (let i = 0; i < 20; i++) {
                 await sleep(250);
-                segments = document.querySelectorAll('transcript-segment-view-model .yt-core-attributed-string');
+                segments = document.querySelectorAll('yt-formatted-string.segment-text');
                 if (segments.length > 0) break;
             }
         }
